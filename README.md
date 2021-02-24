@@ -1,12 +1,12 @@
 Discrepancy between output loss during training and loss calculated using weights
 ===============================
 
-*1	Objective*
+##1	Objective
 During regression using neural networks with the app Keras in Python, there is discrepancy between the loss yielded during training (stored in ‘logs’ and retrieved using, for instance, ‘model.history’) and the loss calculated from the weights after training (using the command ‘model.evaluate’). 
 In Keras FAQS this issue is risen. It warns about regularization methods, which are reflected in loss, but not in validation loss. Also points out that the training loss is the average of the losses for each batch of training data, over the current epoch. 
 Hence, in this work, these statements are studied by comparing loss values calculated in different ways.
 
-*2	Datasets and models*
+**2	Datasets and models**
 The input training dataset has 50 samples filled with 50 random numbers each. The output is dimension is 1 and it is generated using a mathematical function over the 50 numbers. After generating the output, noise is added to the input dataset.
 The validation dataset is set equal to the training dataset.
 Four model architectures are explored:
