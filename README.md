@@ -1,5 +1,5 @@
-Discrepancy between output loss during training and loss calculated using weights
-===============================
+# Discrepancy between output loss during training and loss calculated using weights
+
 
 ## 1	Objective
 During regression using neural networks with the app Keras in Python, there is discrepancy between the loss yielded during training (stored in ‘logs’ and retrieved using ‘model.history.history’) and the loss calculated from the weights after training (using the command ‘model.evaluate’). 
