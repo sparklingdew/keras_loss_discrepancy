@@ -19,9 +19,13 @@ The loss function is mean square error.
 
 ## 3	Analysis
 Note 1
+
 Log loss: loss values calculated internally by Keras.
+
 Evaluated loss: loss values obtained from the evaluation of weights after fitting a model.
+
 Note 2
+
 Tensorflow 1.15 and Tensorflow 2.4 give different results. The major difference is found in the log loss per batch. Here I report the results for Tensorflow 2.4.
 
 ### 3.1	Log loss: no regularization and one batch
