@@ -2,8 +2,8 @@ Discrepancy between output loss during training and loss calculated using weight
 ===============================
 
 ## 1	Objective
-During regression using neural networks with the app Keras in Python, there is discrepancy between the loss yielded during training (stored in ‘logs’ and retrieved using, for instance, ‘model.history’) and the loss calculated from the weights after training (using the command ‘model.evaluate’). 
-In [Keras FAQS] this issue is risen. It warns about regularization methods, which are reflected in loss, but not in validation loss. Also points out that the training loss is the average of the losses for each batch of training data, over the current epoch. 
+During regression using neural networks with the app Keras in Python, there is discrepancy between the loss yielded during training (stored in ‘logs’ and retrieved using ‘model.history.history’) and the loss calculated from the weights after training (using the command ‘model.evaluate’). 
+In [Keras FAQS] this issue is risen. It warns about regularization methods, which are reflected in training loss, but not in validation loss. Also points out that the training loss is the average of the losses for each batch of training data, over the current epoch. 
 Hence, in this work, these statements are studied by comparing loss values calculated in different ways.
 
 ## 2	Datasets and models
@@ -14,6 +14,7 @@ Four model architectures are explored:
 - CNN (convolutional neural network)
 - CNN + batch normalization (CNN regularized with batch normalization layers)
 - CNN + drop-out (CNN regularized with drop-out layers)
+
 Shuffle of batches is set to False to study in detail the losses given after every batch.
 The loss function is mean square error.
 
@@ -51,7 +52,7 @@ When regularization is applied, the difference of training log loss with actual 
 
 ## 4	Conclusion 
 When batch size is smaller than the training dataset, the log loss values differ from the actual loss values upon evaluation of the resulting model. This difference is accentuated by the use of regularization layers.
-Hence, it is advised to evaluate the model after fitting to cross-check the log loss values. Furthermore, as log loss of the validation dataset is accurately determined, a subset of the training dataset can be used as input of the validation set for evaluation during model fitting,
+Hence, it is advised to evaluate the model after fitting to cross-check the log loss values. Furthermore, as log loss of the validation dataset is accurately determined, a subset of the training dataset can be used as input of the validation set for evaluation during model fitting.
 
    [Keras FAQS]: <https://keras.io/getting_started/faq/#why-is-my-training-loss-much-higher-than-my-testing-loss>
    [“the training loss that Keras displays is the average of the losses for each batch of training data, over the current epoch”]: <https://keras.io/getting_started/faq/#why-is-my-training-loss-much-higher-than-my-testing-loss>
